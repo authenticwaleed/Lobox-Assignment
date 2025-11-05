@@ -1,0 +1,106 @@
+$ring: rgba(91, 123, 255, 0.35);
+$brand: #5b7bff;
+$border: #d1d5db;
+$border-hover: #a3aab2;
+$text: #111827;
+$muted: #6b7280;
+$placeholder: #9aa3af;
+$chip-bg: #1f1f22;
+$opt-focus: rgba(91, 123, 255, 0.10);
+$opt-active: rgba(91, 123, 255, 0.15);
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+.select-wrap {
+  width: 420px;
+  max-width: 92vw;
+}
+
+.ms {
+
+  .ms__control {
+    min-height: 44px;
+    border-radius: 14px;
+    border-color: $border;
+    box-shadow: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+
+    &:hover {
+      border-color: $border-hover;
+    }
+
+    &--is-focused {
+      border-color: $brand;
+      box-shadow: 0 0 0 3px $ring;
+    }
+  }
+
+  .ms__value-container {
+    padding: 4px 12px;
+  }
+
+  .ms__placeholder {
+    color: $placeholder;
+  }
+
+  .ms__dropdown-indicator {
+    transition: transform .15s ease;
+  }
+
+  .ms__control--menu-is-open .ms__dropdown-indicator {
+    transform: rotate(180deg);
+  }
+
+  .ms__menu {
+    border-radius: 16px;
+    padding: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+    overflow: hidden;
+  }
+
+  .ms__menu-list {
+    padding: 4px;
+  }
+
+  .ms__group-heading {
+    font-weight: 600;
+    color: $muted;
+    text-transform: none;
+    font-size: 14px;
+    padding: 6px 8px;
+    margin: 2px 0;
+  }
+
+  .ms__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin: 4px;
+    color: $text;
+    cursor: pointer;
+
+    &--is-focused {
+      background: $opt-focus;
+    }
+
+    &--is-selected {
+      background: $opt-active;
+    }
+  }
+
+  .ms__option-label {
+    display: inline-flex;
+    gap: 8px;
+  }
+
+  .ms__check {
+    margin-left: 12px;
+  }
+}
